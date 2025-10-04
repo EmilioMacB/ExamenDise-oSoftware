@@ -1,5 +1,5 @@
 
-from EXAMEN_SOLID_POO.ejercicio03.ejercicio03_intrerfaces import IRepositorio
+from EXAMEN_SOLID_POO.ejercicio03_intrerfaces import IRepositorio
 
 class RepositorioArchivo(IRepositorio):
    
@@ -12,7 +12,13 @@ class RepositorioArchivo(IRepositorio):
             f.write(f"Préstamos: {len(prestamos)}\n")
         print(f"[Archivo] Datos guardados exitosamente en '{self.archivo}'.")
 
-    
+    def cargar(self):
+        try:
+            with open(self._archivo, 'r') as f:
+                data = f.read()
+            return True
+        except:
+            return False
 
 # --- BONUS ---
 class RepositorioMemoria(IRepositorio): #simula guardar en memoria (no hay persistencia)
