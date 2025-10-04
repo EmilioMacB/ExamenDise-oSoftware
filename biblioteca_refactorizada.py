@@ -1,5 +1,5 @@
 from biblioteca_examen import SistemaBiblioteca
-from ejercicio01_OCP import EstrategiaBusqueda # se importa la clase abstracta
+from EXAMEN_SOLID_POO.ejercicio01.ejercicio01_OCP import EstrategiaBusqueda # se importa la clase abstracta
 
 class SistemaBibliotecaOCP(SistemaBiblioteca):
     def buscar_libro(self, estrategia: EstrategiaBusqueda, valor):
