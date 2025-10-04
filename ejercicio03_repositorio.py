@@ -6,7 +6,7 @@ class RepositorioArchivo(IRepositorio):
     def __init__(self, archivo="biblioteca.txt"):
         self.archivo = archivo
 
-    def guardar(self, libros: list, prestamos: list):
+    def guardar(self, libros, prestamos):
         with open(self.archivo, 'w') as f:
             f.write(f"Libros: {len(libros)}\n")
             f.write(f"Préstamos: {len(prestamos)}\n")
@@ -23,5 +23,5 @@ class RepositorioArchivo(IRepositorio):
 # --- BONUS ---
 class RepositorioMemoria(IRepositorio): #simula guardar en memoria (no hay persistencia)
    
-    def guardar(self, libros: list, prestamos: list):
+    def guardar(self, libros, prestamos):
         print(f"[Memoria] {len(libros)} libros y {len(prestamos)} préstamos 'guardados' en memoria.")

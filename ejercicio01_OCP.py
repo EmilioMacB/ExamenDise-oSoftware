@@ -4,7 +4,7 @@ from biblioteca_examen import Libro
 class EstrategiaBusqueda(ABC):
    
     @abstractmethod
-    def coincide(self, libro: Libro, valor: str) -> bool:
+    def coincide(self, libro, valor) -> bool:
         pass
 
 # Estrategias

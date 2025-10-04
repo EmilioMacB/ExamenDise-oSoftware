@@ -20,7 +20,7 @@ class RepositorioBiblioteca: #solo maneja la persistencia de datos (guardar y ca
     def __init__(self, archivo="biblioteca.txt"):
         self.archivo = archivo
 
-    def guardar(self, libros: list, prestamos: list):
+    def guardar(self, libros, prestamos):
         with open(self.archivo, 'w') as f:
             f.write(f"Libros: {len(libros)}\n")
             f.write(f"Préstamos: {len(prestamos)}\n")
@@ -28,5 +28,5 @@ class RepositorioBiblioteca: #solo maneja la persistencia de datos (guardar y ca
 
 
 class ServicioNotificaciones: #solo maneja las notificaciones
-    def enviar_notificacion(self, usuario: str, libro: Libro):
+    def enviar_notificacion(self, usuario, libro):
         print(f"[NOTIFICACIÓN] {usuario}: Préstamo de '{libro}'")
